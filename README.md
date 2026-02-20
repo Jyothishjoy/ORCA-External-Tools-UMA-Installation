@@ -55,4 +55,27 @@ Run this job in your local directory using the following command.
 When running the job for the first time, it takes some time to download the UMA model. This only happens during the initial run; subsequent jobs will load the already downloaded model.
 
 
+### Step 6: Test the Client-Server Interface
+
+To use the client-server model of UMA, initialize a UMA client using the following command.
+
+`/home/fslcollab286/orca-external-tools/bin/oet_server uma &`
+
+This will initialize a server in the login node, named `oet_server`. Use the command `top` in the terminal to view the active server and its PID.
+
+Once the server is active, submit the following job in the same way as before. The only difference in the new input is the `ProgExt` path, which is now directed to `oet_client`.
+
+        ! ExtOpt sp
+        
+        %method
+        ProgExt "/home/fslcollab286/orca-external-tools/bin/oet_client"
+        end
+        
+        * xyz 0 1
+        H 0.0 0.0 0.0
+        H 0.0 0.0 0.9
+        *
+
+Once the calculation is finished, do not forget to kill the server in your login node using the command `kill PID`
+
 
