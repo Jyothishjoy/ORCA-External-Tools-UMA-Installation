@@ -2,7 +2,7 @@
 
 ### Step 1: Git Pull
 
-Go to the directory where you want to install orca_tools, and download the package from https://github.com/faccts/orca-external-tools.
+Using your terminal, navigate to the directory where you want to install `orca_tools`, and then download the package from https://github.com/faccts/orca-external-tools.
 
 `git pull https://github.com/faccts/orca-external-tools`
 
