@@ -65,16 +65,16 @@ This will initialize a server in the login node, named `oet_server`. Use the com
 
 Once the server is active, submit the following job in the same way as before. The only difference in the new input is the `ProgExt` path, which is now directed to `oet_client`.
 
-        ! ExtOpt sp
-        
-        %method
-        ProgExt "/home/fslcollab286/orca-external-tools/bin/oet_client"
-        end
-        
-        * xyz 0 1
-        H 0.0 0.0 0.0
-        H 0.0 0.0 0.9
-        *
+    ! ExtOpt sp
+    
+    %method
+    ProgExt "/home/fslcollab286/orca-external-tools/bin/oet_client"
+    end
+    
+    * xyz 0 1
+    H 0.0 0.0 0.0
+    H 0.0 0.0 0.9
+    *
 
 Once the calculation is finished, do not forget to kill the server in your login node using the command `kill PID`
 
