@@ -90,9 +90,9 @@ To run calculations using multiple processors, use MPI. Initialize them using th
 
 `export OMP_STACKSIZE=4G`
 
-`export PATH=/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/bin:\$PATH`
+`export PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/bin:\$PATH"`
 
-`export LD_LIBRARY_PATH=/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/lib:\$LD_LIBRARY_PATH`
+`export LD_LIBRARY_PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/lib:\$LD_LIBRARY_PATH"`
 
 Once the calculation is finished, do not forget to kill the server in your login node using the command `kill PID`
 
