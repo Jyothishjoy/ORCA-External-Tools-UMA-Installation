@@ -76,6 +76,8 @@ Once the server is active, submit the following job in the same way as before. T
     H 0.0 0.0 0.9
     *
 
+`/home/fslcollab286/orca_6_1_1/orca h2.inp > h2.out &`
+
 Once the calculation is finished, do not forget to kill the server in your login node using the command `kill PID`
 
 
