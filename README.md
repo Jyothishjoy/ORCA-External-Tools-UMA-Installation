@@ -57,7 +57,7 @@ When running the job for the first time, it takes some time to download the UMA 
 
 ### Step 6: Test the Client-Server Interface
 
-To use the client-server model of UMA, initialize a UMA client using the following command.
+To use the client-server model of UMA, initialize a UMA server using the following command.
 
 `/home/fslcollab286/orca-external-tools/bin/oet_server uma &`
 
