@@ -61,7 +61,11 @@ To use the client-server model of UMA, initialize a UMA client using the followi
 
 `/home/fslcollab286/orca-external-tools/bin/oet_server uma &`
 
-This will initialize a server in the login node, named `oet_server`. Use the command `top` in the terminal to view the active server and its PID.
+Optionally, for keeping the server longer for multiple jobs, request salloc via the following (do this before initializing the server), 
+
+`salloc --time 12:00:00 --nodes 1 --ntasks 4 --gpus 1 --mem 8g`
+
+The server will be initialized in the login node, named `oet_server`. Use the command `top` in the terminal to view the active server and its PID.
 
 Once the server is active, submit the following job in the same way as before. The only difference in the new input is the `ProgExt` path, which is now directed to `oet_client`.
 
