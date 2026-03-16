@@ -61,10 +61,6 @@ To use the client-server model of UMA, initialize a UMA server using the followi
 
 `/home/fslcollab286/orca-external-tools/bin/oet_server uma &`
 
-Optionally, for keeping the server longer for multiple jobs, request salloc via the following (do this before initializing the server), 
-
-`salloc --time 12:00:00 --nodes 1 --ntasks 4 --gpus 1 --mem 8g`
-
 The server will be initialized in the login node, named `oet_server`. Use the command `top` in the terminal to view the active server and its PID.
 
 Once the server is active, submit the following job in the same way as before. The only difference in the new input is the `ProgExt` path, which is now directed to `oet_client`.
@@ -82,6 +78,21 @@ Once the server is active, submit the following job in the same way as before. T
 
 `/home/fslcollab286/orca_6_1_1/orca h2.inp > h2.out &`
 
+Once the calculation is finished, do not forget to kill the server in your login node using the command `kill PID`
+
+
+### Step 7: Test to see if this can be run using salloc
+
+To keep the server longer for multiple jobs, request salloc via the following.
+
+`salloc --time 12:00:00 --nodes 1 --ntasks 4 --gpus 1 --mem 8g`
+
+Initialize a UMA server using the following command.
+
+`/home/fslcollab286/orca-external-tools/bin/oet_server uma &`
+
+The server will be initialized in the login node, named `oet_server`. Use the command `top` in the terminal to view the active server and its PID.
+
 To run calculations using multiple processors, use MPI. Initialize them using the following,
 
 `export PSM2_CUDA=1`
@@ -94,6 +105,6 @@ To run calculations using multiple processors, use MPI. Initialize them using th
 
 `export LD_LIBRARY_PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/lib:\$LD_LIBRARY_PATH"`
 
-Once the calculation is finished, do not forget to kill the server in your login node using the command `kill PID`
+Now, submit calculations on the head node as usual. The only caveat is that it works fine with the CPU, but with the GPU, it is throwing some errors. `torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device`
 
-
+Need to fix this!
