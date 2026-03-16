@@ -108,3 +108,6 @@ To run calculations using multiple processors, use MPI. Initialize them using th
 Now, submit calculations on the head node as usual. The only caveat is that it works fine with the CPU, but with the GPU, it is throwing some errors. `torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device`
 
 Need to fix this!
+
+To change cpu/gpu, go to calculator/uma.py `/orca-external-tools/src/oet/calculator/uma.py` line 188.
+
