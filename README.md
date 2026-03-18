@@ -1,6 +1,6 @@
 # ORCA-External-Tools-V2.0.0 UMA-Installation
 
-### Step 1: Git Pull
+### Step 1: Clone Pull
 
 Using your terminal, navigate to the directory where you want to install `orca_external_tools`.
 
