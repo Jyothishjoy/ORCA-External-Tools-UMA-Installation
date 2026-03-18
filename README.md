@@ -6,7 +6,7 @@ Using your terminal, navigate to the directory where you want to install `orca_e
 
 Download the package from https://github.com/faccts/orca-external-tools using the following command.
 
-`git pull https://github.com/faccts/orca-external-tools`
+`git clone https://github.com/faccts/orca-external-tools`
 
 
 ### Step 2: Create a virtual Env
