@@ -13,11 +13,15 @@ Download the package from https://github.com/faccts/orca-external-tools using th
 
 Create a virtual environment in the system. I chose to create it inside the downloaded `orca-external-tools` directory.
 
-`virtualenv -p python3.12 orcatools`
+`virtualenv orcatools`
 
 This will create a `venv` named `orcatools` inside the `orca-external-tools` directory.
 
 ### Step 3: Install the package
+
+Activate the new `env`
+
+`source /home/fslcollab286/orca-external-tools/orcatools/bin/activate`
 
 Install the tools using the following command.
 
