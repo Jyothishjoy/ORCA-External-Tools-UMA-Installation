@@ -89,11 +89,15 @@ Once the calculation is finished, do not forget to kill the server in your login
 
 To keep the server longer for multiple jobs, request salloc via the following.
 
-`salloc --time 12:00:00 --nodes 1 --ntasks 4 --gpus 1 --mem 8g`
+`salloc --time 1:00:00 --nodes 1 --ntasks 4 --gpus h200:1 --mem 8g`. Here h200 gpu is requested because the latest fairchem-core only works with modern gpus. 
+
+Activate the `env`
+
+`source /home/fslcollab286/orca-external-tools/orcatools/bin/activate`
 
 Initialize a UMA server using the following command.
 
-`/home/fslcollab286/orca-external-tools/bin/oet_server uma &`
+`/home/fslcollab286/orca-external-tools/bin/oet_server uma -n 4 &`   Here -n 4 is needed to request 4 Procs for the server. Otherwise, a job requesting 4 procs will not work.
 
 The server will be initialized in the login node, named `oet_server`. Use the command `top` in the terminal to view the active server and its PID.
 
