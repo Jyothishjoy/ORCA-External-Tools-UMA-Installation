@@ -113,9 +113,20 @@ To run calculations using multiple processors, use MPI. Initialize them using th
 
 `export LD_LIBRARY_PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/lib:$LD_LIBRARY_PATH"`
 
-Now, submit calculations on the head node as usual. The only caveat is that it works fine with the CPU, but with the GPU, it is throwing some errors. `torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device`
+Now, submit calculations on the head node as usual. 
 
-Need to fix this!
+`~/orca_6_1_1/orca job.inp > job.out &`
+
+Now, the server is shutting down unexpectedly. Need to solve this!
 
 To change cpu/gpu, go to calculator/uma.py `/orca-external-tools/src/oet/calculator/uma.py` line 188.
 
+## Upgrade fairchem-core to access uma-s-1p2 model
+
+Activate the `env`. Go to the `orcatools env` folder. Execute the following command.
+
+`pip install fairchem-core --upgrade`
+
+This will install the latest fairchem-core. Now, change the name of the model in the `/orca-external-tools/src/oet/calculator/uma.py` line 188.
+
+Run a new test calculation in the head node (use CPU). This will download the new model and cache it. 
