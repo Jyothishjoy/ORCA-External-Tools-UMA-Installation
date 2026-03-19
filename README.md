@@ -105,9 +105,9 @@ To run calculations using multiple processors, use MPI. Initialize them using th
 
 `export OMP_STACKSIZE=4G`
 
-`export PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/bin:\$PATH"`
+`export PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/bin:$PATH"`
 
-`export LD_LIBRARY_PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/lib:\$LD_LIBRARY_PATH"`
+`export LD_LIBRARY_PATH="/apps/openmpi/5.0.3/gcc-14.1.0_cuda-12.5_ucx-1.17.0/lib:$LD_LIBRARY_PATH"`
 
 Now, submit calculations on the head node as usual. The only caveat is that it works fine with the CPU, but with the GPU, it is throwing some errors. `torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device`
 
